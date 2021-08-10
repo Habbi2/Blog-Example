@@ -12,7 +12,7 @@ import firebaseConfig from "../config";
 const Auth = () => {
   return (
     <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
-      <div>
+      <div className="auth">
         <button
           onClick={() => {
             const googleAuthProvider = new firebase.auth.GoogleAuthProvider();

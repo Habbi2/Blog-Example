@@ -190,8 +190,8 @@ export default function Fetch() {
   };
 
   return (
-    <div>
-      <Auth />
+    <div className="body">
+      <Auth/>
       <UserContext.Provider value={post}>
         <Form
           handleFirebaseUpload={handleFirebaseUploadOnce}

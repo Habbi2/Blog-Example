@@ -1,1 +1,36 @@
 @import "~bootstrap/scss/bootstrap";
+
+.body {
+  background-color: aqua;
+  width: 100%;
+  height: 100vh;
+}
+
+.auth {
+  padding-top: 2vh;
+  width: 97%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hidden {
+  color: transparent;
+  margin-left: 17vh;
+}
+
+.tinput {
+  width: 97%;
+}
+
+.dinput {
+  width: 100%;
+  height: 70vh;
+}
+
+#My-Form-post {
+  margin-left: 5vh;
+}
+
+.pbutton {
+  margin-top: 2vh;
+}

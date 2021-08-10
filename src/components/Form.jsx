@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UserContext } from "./Fetch";
+//  
 
 const Form = ({ handleFirebaseUpload, handlePostSubmit }) => {
     const [imageAsFile, setImageAsFile] = useState("");
@@ -20,22 +20,9 @@ const Form = ({ handleFirebaseUpload, handlePostSubmit }) => {
   
     // const handlePost = (e) => {};
     return (
-      <div>
+      <div className="form">
         <form
-          id="My-Form-image"
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert("You have submitted the image.");
-            handleFirebaseUpload(imageAsFile);
-          }}
-        >
-          <label>
-            Image:
-            <input type="file" onChange={handleImageAsFile} />
-          </label>
-          <input type="submit" />
-        </form>
-        <form
+          className="col-11"
           id="My-Form-post"
           onSubmit={(e) => {
             e.preventDefault();
@@ -43,29 +30,30 @@ const Form = ({ handleFirebaseUpload, handlePostSubmit }) => {
             handlePostSubmit(input, imageAsFile);
           }}
         >
-          <label>
-            Add:
-            <input
+          <label className="col-8">
+            <h3>Title:</h3>
+            <input className="tinput"
               type="text"
               name="name"
               value={input.name}
               onChange={handleChange}
             />
           </label>
-          <label>
-            Quantity:
-            <input
-              type="number"
-              min="0"
+          <input className="col-4" type="file" onChange={handleImageAsFile} />
+          <label className="col-12">
+            <h5>Text:</h5>
+            <textarea className="dinput"
+              type="text"
               name="quantity"
               value={input.quantity}
               onChange={handleChange}
             />
           </label>
-          <label>Post:</label>
-          <input value="Post" type="submit" />
+          <input value="Post" type="submit" className="pbutton"/>
+          <label>
+        </label>
         </form>
-        <UserContext.Consumer>
+        {/* <UserContext.Consumer>
           {(value) =>
             value.map((k) => (
               <div key={k[0]}>
@@ -79,7 +67,7 @@ const Form = ({ handleFirebaseUpload, handlePostSubmit }) => {
               </div>
             ))
           }
-        </UserContext.Consumer>
+        </UserContext.Consumer> */}
       </div>
     );
   };
