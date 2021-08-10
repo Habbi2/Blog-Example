@@ -3,8 +3,8 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import {
   FirebaseAuthProvider,
-  FirebaseAuthConsumer,
-  IfFirebaseAuthed,
+  // FirebaseAuthConsumer,
+  // IfFirebaseAuthed,
   IfFirebaseAuthedAnd
 } from "@react-firebase/auth";
 import firebaseConfig from "../config";
@@ -22,21 +22,13 @@ const Auth = () => {
           Sign In with Google
         </button>
         <button
-          data-testid="signin-anon"
-          onClick={() => {
-            firebase.auth().signInAnonymously();
-          }}
-        >
-          Sign In Anonymously
-        </button>
-        <button
           onClick={() => {
             firebase.auth().signOut();
           }}
         >
           Sign Out
         </button>
-        <FirebaseAuthConsumer>
+        {/* <FirebaseAuthConsumer>
           {({ isSignedIn, user, providerId }) => {
             return (
               <pre style={{ height: 300, overflow: "auto" }}>
@@ -44,13 +36,13 @@ const Auth = () => {
               </pre>
             );
           }}
-        </FirebaseAuthConsumer>
+        </FirebaseAuthConsumer> */}
         <div>
-          <IfFirebaseAuthed>
+          {/* <IfFirebaseAuthed>
             {() => {
               return <div>You are authenticated</div>;
             }}
-          </IfFirebaseAuthed>
+          </IfFirebaseAuthed> */}
           <IfFirebaseAuthedAnd
             filter={({ providerId }) => providerId !== "anonymous"}
           >
