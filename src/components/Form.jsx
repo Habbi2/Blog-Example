@@ -39,7 +39,8 @@ const Form = ({ handleFirebaseUpload, handlePostSubmit }) => {
               onChange={handleChange}
             />
           </label>
-          <input className="col-4" type="file" onChange={handleImageAsFile} />
+          <input className="col-4" id="hidden
+          " type="file" onChange={handleImageAsFile} />
           <label className="col-12">
             <h5>Text:</h5>
             <textarea className="dinput"
@@ -53,21 +54,6 @@ const Form = ({ handleFirebaseUpload, handlePostSubmit }) => {
           <label>
         </label>
         </form>
-        {/* <UserContext.Consumer>
-          {(value) =>
-            value.map((k) => (
-              <div key={k[0]}>
-                <img alt="" src={k[1]}></img>
-                <ul>
-                  <li>
-                    <p>Nombre: {k[2].name}</p>
-                    <p>Quantity: {k[2].quantity}</p>
-                  </li>
-                </ul>
-              </div>
-            ))
-          }
-        </UserContext.Consumer> */}
       </div>
     );
   };

@@ -2,35 +2,57 @@
 
 .body {
   background-color: aqua;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
 .auth {
-  padding-top: 2vh;
-  width: 97%;
+  width: 97vw;
   display: flex;
   justify-content: flex-end;
 }
 
 .hidden {
+  display: flex;
+  flex-wrap: wrap;
   color: transparent;
-  margin-left: 17vh;
+  margin-left: 17vw;
 }
 
 .tinput {
-  width: 97%;
+  width: 60vw;
 }
 
 .dinput {
-  width: 100%;
+  width: 90vw;
   height: 70vh;
 }
 
 #My-Form-post {
-  margin-left: 5vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .pbutton {
-  margin-top: 2vh;
+  margin-top: 1vh;
+}
+
+#search {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchi {
+  width: 10vw;
+}
+
+.searchb {
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+
+.logo {
+  margin-left: 1vw;
 }

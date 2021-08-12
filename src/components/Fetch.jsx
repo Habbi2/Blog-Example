@@ -5,6 +5,8 @@ import { createContext, useState, useEffect } from "react";
 import Form from "./Form";
 import { storage } from "../config";
 import Auth from "../components/Auth";
+import Library from "./Library";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export const UserContext = createContext();
 
@@ -191,13 +193,22 @@ export default function Fetch() {
 
   return (
     <div className="body">
-      <Auth/>
       <UserContext.Provider value={post}>
-        <Form
-          handleFirebaseUpload={handleFirebaseUploadOnce}
-          handleFirebaseDelete={handleFirebaseDelete}
-          handlePostSubmit={handlePostSubmit}
-        ></Form>
+        <Router>
+          <Switch>
+            <Route exact path="/form">
+              <Auth />
+              <Form 
+                handleFirebaseUpload={handleFirebaseUploadOnce}
+                handleFirebaseDelete={handleFirebaseDelete}
+                handlePostSubmit={handlePostSubmit}
+              />
+            </Route>
+            <Route exact path="/">
+              <Library />
+            </Route>
+          </Switch>
+        </Router>
       </UserContext.Provider>
     </div>
   );
